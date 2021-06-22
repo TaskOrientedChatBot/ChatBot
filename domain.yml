@@ -11,23 +11,23 @@ intents:
 
 responses:
   utter_greet:
-  - text: "Hey! How are you?"
+  - text: "Salut! Ce faci?"
 
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
+  - text: "Am pregatit ceva care te-ar putea inveseli:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Te-a ajutat?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Super, ma bucur!"
 
   utter_goodbye:
-  - text: "Bye"
+  - text: "La revedere!"
 
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
+  - text: "Sunt un agent conversational."
 
 session_config:
   session_expiration_time: 60
