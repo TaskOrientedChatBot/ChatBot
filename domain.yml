@@ -12,22 +12,46 @@ intents:
 responses:
   utter_greet:
   - text: "Salut! Ce faci?"
+  - text: "Hey! Ce faci?"
+  - text: "Ce mai faci?"
+  - text: "Cum merge?"
+  - text: "Ce mai zici?"
+  - text: "Salut!"
+  - text: "Hello, cum esti?"
 
   utter_cheer_up:
+  - text: "Uite ceva sa te inveseleasca:"
+    image: "https://postimg.cc/Y4dMNHkF"
   - text: "Am pregatit ceva care te-ar putea inveseli:"
     image: "https://i.imgur.com/nGF1K8f.jpg"
 
   utter_did_that_help:
   - text: "Te-a ajutat?"
+  - text: "Este ok?"
+  - text: "S-a rezolvat?"
+  - text: "Ai reusit?"
+  - text: "A fost de folos?"
 
   utter_happy:
   - text: "Super, ma bucur!"
+  - text: "Super tine-o tot asa!"
+  - text: "Super!"
+  - text: "Foarte bine!"
+  - text: "Perfect"
 
   utter_goodbye:
-  - text: "La revedere!"
+  - text: "Bye"
+  - text: "Salut"
+  - text: "Pa"
+  - text: "La revedere"
+  - text: "Pe curand"
 
   utter_iamabot:
   - text: "Sunt un agent conversational."
+  - text: "Sunt un bot, bazat pe Rasa"
+  - text: "Sunt doar un bot"
+  - text: "Nu sunt uman"
+  - text: "Sunt un chatbot care foloseste IA"
 
 session_config:
   session_expiration_time: 60
