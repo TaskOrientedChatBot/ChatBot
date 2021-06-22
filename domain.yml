@@ -18,6 +18,7 @@ responses:
   - text: "Ce mai zici?"
   - text: "Salut!"
   - text: "Hello, cum esti?"
+  - text: "Salut! Sunt asistentul tau si te voi ajuta sa inveti sa dezvolti primul program in inteligenta artificiala."
 
   utter_cheer_up:
   - text: "Uite ceva sa te inveseleasca:"
