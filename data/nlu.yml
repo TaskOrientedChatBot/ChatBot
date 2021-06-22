@@ -1,0 +1,105 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - salut
+    - buna
+    - buna ziua
+    - buna seara
+    - hey
+    - hello
+    - hi
+    - hello there
+    - hey there
+    - hai sa incepem
+    - bunaziua
+    - bunaseara
+    - salutare
+
+- intent: goodbye
+  examples: |
+    - noapte buna
+    - o dupa amiaza placuta
+    - o dupa-amiaza placuta
+    - o seara placuta
+    - la revedere
+    - pa
+    - papa
+    - ne auzim mai tarziu
+    - ne mai auzim mai incolo
+    - o zi buna
+    - o seara buna
+    - sa ai o zi frumoasa
+    - iti doresc o zi buna
+
+- intent: affirm
+  examples: |
+    - da
+    - sigur
+    - desigur
+    - sigur ca da
+    - de acord
+    - suna bine
+    - yep
+    - yeah
+    - intr-adevar
+    - adevarat
+    - corect
+    - suna foarte bine
+    - ok
+
+- intent: deny
+  examples: |
+    - nu
+    - niciodata
+    - nu chiar
+    - nu prea cred
+    - nu-mi place
+    - nu sunt de acord
+    - sigur nu
+    - nu prea
+    - in niciun caz
+    - nope
+    - no
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - super bine
+    - super
+    - extraordinar
+    - foarte bine
+    - minunat
+    - ma simt foarte bine
+    - de vis
+    - bine
+    - chiar bine
+
+- intent: mood_unhappy
+  examples: |
+    - am avut o zi groaznica
+    - sunt trist
+    - nu ma simt prea bine
+    - sunt dezamagit
+    - super trist
+    - depresiv
+    - sunt asa de trist
+    - trist
+    - am fost si mai bine
+    - nu prea bine
+    - extrem de trist
+    - asa de triiist
+    - asa de trist
+    - am avut si zile mai bune
+
+- intent: bot_challenge
+  examples: |
+    - esti un bot?
+    - esti om?
+    - vorbesc cu un om?
+    - vorbesc cu un bot?
+    - cu cine vorbesc?
+    - cine esti?
+    - ce esti?
+    - esti un bot sau un om?
