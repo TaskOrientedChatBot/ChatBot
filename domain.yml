@@ -8,6 +8,13 @@ intents:
   - mood_great
   - mood_unhappy
   - bot_challenge
+  - tell_name
+  - env_config
+
+entities:
+  - package
+  - programming_language
+  - domain
 
 responses:
   utter_greet:
@@ -53,6 +60,12 @@ responses:
   - text: "Sunt doar un bot"
   - text: "Nu sunt uman"
   - text: "Sunt un chatbot care foloseste IA"
+
+  utter_thanks:
+  - text: "Multumesc pentru informatii"
+
+actions:
+  - action_env_config
 
 session_config:
   session_expiration_time: 60

@@ -28,3 +28,17 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
+
+- story: install_instructions
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: env_config
+    entities:
+      - programming_language: "python"
+      - domain: "ML"
+      - package: "tensorflow"
+  - action: action_env_config
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
