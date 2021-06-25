@@ -42,9 +42,11 @@ nlu:
     - de acord
     - suna bine
     - yep
+    - dap
     - yeah
     - intr-adevar
     - adevarat
+    - mda
     - corect
     - suna foarte bine
     - ok
@@ -103,3 +105,48 @@ nlu:
     - cine esti?
     - ce esti?
     - esti un bot sau un om?
+
+- intent: tell_name
+  examples: |
+    - cum te cheama?
+    - spune-mi cum te cheama
+    - cum te numesti?
+    - cine esti?
+    - poti sa-mi spui numele tau, te rog?
+    - ai putea sa-mi spui cum te cheama?
+
+- intent: env_config
+  examples: |
+    - ce trebuie sa stiu inainte ca sa pot sa invat [ML]{"entity":"domain"}?
+    - trebuie invatate multe inainte ca sa pot face [ML]{"entity":"domain"}?
+    - cum pot sa imi setez mediul pentru [AI]{"entity":"domain"}?
+    - cum pot sa instalez [python]{"entity":"programming_language","value":"python"}?
+    - ce versiune de [python]{"entity":"programming_language"} trebuie sa instalez pentru [tensorflow]{"entity":"package"}?
+    - ce framework imi trebuie pentru [ML]{"entity":"domain","value":"ML"}?
+    - cum pot sa instalez [tensorflow]{"entity":"package","value":"tensorflow"}?
+    - ce versiune de [pytorch]{"entity":"package","value":"pytorch"} imi trebuie ca sa pot crea un model [ML]{"entity":"domain","value":"ML"}?
+    - cum pot sa instalez [tensorflow 2.0]{"entity":"package"}?
+    - vreau sa instalez toate pachetele pentru [ML]{"entity":"domain"} intr-un env [anaconda]{"entity":"package"}
+    - cum pot sa instalez [conda]{"entity":"package"}?
+    - daca am [python]{"entity":"programming_language","value":"python"} deja instalat, cum pot instala si [pytorch]{"entity":"package","value":"pytorch"}?
+    - exista [tensorflow]{"entity":"package","value":"tensorflow"} si pentru [C++]{"entity":"programming_language","value":"C++"}
+    - vreau sa instalez si eu [conda]{"entity":"package"}
+    - ma poti ajuta sa invat [C++]{"entity":"programming_language"} ?
+    - am nevoie sa stiu [python]{"entity":"programming_language"} sau [C++]{"entity":"programming_language"} inainte de [ML]{"entity":"domain"}?
+    - cat de bine trebuie sa stii [python]{"entity":"programming_language"} ca sa poti face [ML]{"entity":"domain"}?
+    - am nevoie si de [C++]{"entity":"programming_language"} si de [python]{"entity":"programming_language"} pentru [ML]{"entity":"domain"}?
+    - [tensorflow]{"entity":"package"} este similar cu [pytorch]{"entity":"package"}?
+    - care framework este mai bun? [tensorflow]{"entity":"package"} sau [pytorch]{"entity":"package"}?
+    - in cat timp minim pot invata sa folosesc [pytorch]{"entity":"package"}?
+    - arata-mi un tutorial de [c++]{"entity":"programming_language"} sau [pytorch]{"entity":"package"}.
+    - am nevoie de un tutorial de [python]{"entity":"programming_language"}
+    - se poate sa imi dai un link cu instructiuni de instalat [tensorflow]{"entity":"package"}, [conda]{"entity":"package"} sau [pytorch]{"entity":"package"}?
+    - am nevoie de un tutorial de [c++]{"entity":"programming_language"} si apoi de unul de [tensorflow]{"entity":"package"}
+    - cam cat dureaza in medie sa invat [pytorch]{"entity":"package"} pentru [IA]{"entity":"domain"} sau [ML]{"entity":"domain"} ?
+    - se poate sa invat doar [ML]{"entity":"domain"} fara [IA]{"entity":"domain"} ?
+    - [tensorflow]{"entity":"package"} este mai folosit decat [pytorch]{"entity":"package"} pentru [ML]{"entity":"domain"} ?
+    - da-mi niste instructiuni pentru configurat un env de [conda]{"entity":"package"} cu [pytorch]{"entity":"package"}
+    - stiu putin [c++]{"entity":"programming_language"}, e nevoie neaparat de [python]{"entity":"programming_language"} pentru a face [ML]{"entity":"domain"}?
+    - cat de mult dureaza sa instalez [tensorflow]{"entity":"package"} si [C++]{"entity":"programming_language"}
+    - vreau sa instalez [tensorflow]{"entity":"package"}
+    - vreau sa instalez [pytorch]{"entity":"package"}
