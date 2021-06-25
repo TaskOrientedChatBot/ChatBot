@@ -11,3 +11,9 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+# - rule: respond to AI basic questions
+#   steps:
+#   - intent: learn_ai
+#   - action: action_respond_ai_questions
+

@@ -77,6 +77,7 @@ nlu:
     - de vis
     - bine
     - chiar bine
+    - excelent
 
 - intent: mood_unhappy
   examples: |
@@ -115,6 +116,7 @@ nlu:
     - poti sa-mi spui numele tau, te rog?
     - ai putea sa-mi spui cum te cheama?
 
+
 - intent: env_config
   examples: |
     - ce trebuie sa stiu inainte ca sa pot sa invat [ML]{"entity":"domain"}?
@@ -150,3 +152,87 @@ nlu:
     - cat de mult dureaza sa instalez [tensorflow]{"entity":"package"} si [C++]{"entity":"programming_language"}
     - vreau sa instalez [tensorflow]{"entity":"package"}
     - vreau sa instalez [pytorch]{"entity":"package"}
+
+
+- intent: learn_ai/ask_ml
+  examples: |
+    - ce imi poti spune despre [ml](ml)?
+    - Ce e [ML](ml)?
+    - [ML] defintie
+    - ce este [ml](ml)?
+    - ce stii despre [invatare automata](ml)
+    - ce e [invatarea automata](ml)
+    - poti sa imi dai definitia pentru [machine learning](ml)
+    - poti sa imi spui definitia pentru [ml](ml)
+    - definitia pentru [invatare automata](ml)
+    - defintie [ML](ml)
+    - [Machine learning](ml) def
+    - [machine learning](ml) definitie
+    - [ML](ml) defintie
+    - ai si alta definitie pentru [ML](ml)
+    - ai si alta definitie pentru [machine learning](ml)
+    - ai si alta definitie pentru [Machine Learning](ml)
+    - ai si alta definitie pentru [ml](ml)
+    - ai si alta definitie pentru [invatare automata](ml)
+    - alta definitie pentru [ML](ml)
+    - alta definitie pentru [ml](ml)
+    - alta definitie pentru [machine learning](ml)
+
+
+- intent: learn_ai/ask_dl
+  examples: |
+    - ce imi poti spune despre [dl](dl)?
+    - ce este [dl](dl)?
+    - ce este [invatare profunda](dl)?
+    - [invatare profunda](dl) definitie
+    - vreau sa imi spui mai multe despre [retele neurale](dl)
+    - ce e [NN](dl)
+    - definitia pentru [deep learning](dl)
+    - [dl](dl) definitie
+    - alta definitie pentru [dl](dl)
+
+- intent: learn_ai/ask_ai
+  examples: |
+    - ce imi poti spune despre [inteligenta artificiala](ai)?
+    - ce este [ai](ai)?
+    - ce este [IA](ai)?
+    - ce este [artificial intelligence](ai)?
+    - [inteligenta artificiala](ai) definitie
+    - ce stii despre [ia](ai)?
+    - ce e [AI](ai)
+    - ce e [ia](ai)
+    - definitia pentru [AI](ai)
+    - def pentru [ia](ai)
+    - definitie pt [ia](ai)
+    - [artificial intelligence](ai) definitie
+    - alta definitie (artificial intelligence)(ai)
+    - ai si alta definitie pentru (ai)(ai)
+    - ai si alta definitie pentru (inteligenta artificiala)(ai)
+    - Ai si alta definitie pentru (AI)(ai)
+    - ai si alta definitie pentru (ia)(ai)
+    - definitie [ai](ai)
+    - definitie [AI](ai)
+    - definitie [inteligenta artificiala](ai)
+    - [AI](ai) definitie
+    - [ai](ai) definitie
+    - [IA](ai) definitie
+
+- intent: ask_for_more
+  examples: |
+    - poti sa imi spui mai multe?
+    - poti dezvolta subiectul?
+    - nu stiu daca am inteles. Poti sa imi dai alta definitie?
+    - alta definitie
+    - sunt interesat sa aflu mai multe
+    - ce imi poti spune despre asta?
+    - ai si alta definitie?
+    - alta def
+    - definitie alternativa
+    - ai alta definitie?
+    - care are fi o alta definitie?
+    - alt raspuns ai?
+    - ai si alt raspuns?
+    - ce altceva poti sa imi mai spui?
+    - da-mi alta definitie
+
+

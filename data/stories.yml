@@ -42,3 +42,10 @@ stories:
   - action: utter_did_that_help
   - intent: affirm
   - action: utter_happy
+
+- story: ask about learning AI
+  steps:
+  - intent: learn_ai
+  - action: action_respond_ai_questions
+  - intent: ask_for_more
+  - action: action_respond_ai_questions

@@ -1,59 +1,75 @@
-version: "2.0"
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
   - tell_name
   - env_config
+  - greet:
+      use_entities: true
+  - goodbye:
+      use_entities: true
+  - affirm:
+      use_entities: true
+  - deny:
+      use_entities: true
+  - mood_great:
+      use_entities: true
+  - learn_ai:
+      use_entities: true
+  - mood_unhappy:
+      use_entities: true
+  - bot_challenge:
+      use_entities: true
+  - ask_for_more:
+      use_entities: False
 
 entities:
   - package
   - programming_language
   - domain
+  - ml
+  - dl
+  - ai
 
+slots: {}
 responses:
   utter_greet:
-  - text: "Salut! Ce faci?"
-  - text: "Hey! Ce faci?"
-  - text: "Ce mai faci?"
-  - text: "Cum merge?"
-  - text: "Ce mai zici?"
-  - text: "Salut!"
-  - text: "Hello, cum esti?"
-  - text: "Salut! Sunt asistentul tau si te voi ajuta sa inveti sa dezvolti primul program in inteligenta artificiala."
-
+  - text: Salut! Ce faci?
+  - text: Hey! Ce faci?
+  - text: Ce mai faci?
+  - text: Cum merge?
+  - text: Ce mai zici?
+  - text: Salut!
+  - text: Hello, cum esti?
+  - text: Salut! Sunt asistentul tau si te voi ajuta sa inveti sa dezvolti primul program in inteligenta artificiala.
   utter_cheer_up:
-  - text: "Uite ceva sa te inveseleasca:"
-    image: "https://postimg.cc/Y4dMNHkF"
-  - text: "Am pregatit ceva care te-ar putea inveseli:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - image: https://postimg.cc/Y4dMNHkF
+    text: 'Uite ceva sa te inveseleasca:'
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Am pregatit ceva care te-ar putea inveseli:'
   utter_did_that_help:
-  - text: "Te-a ajutat?"
-  - text: "Este ok?"
-  - text: "S-a rezolvat?"
-  - text: "Ai reusit?"
-  - text: "A fost de folos?"
-
+  - text: Te-a ajutat?
+  - text: Este ok?
+  - text: S-a rezolvat?
+  - text: Ai reusit?
+  - text: A fost de folos?
   utter_happy:
-  - text: "Super, ma bucur!"
-  - text: "Super tine-o tot asa!"
-  - text: "Super!"
-  - text: "Foarte bine!"
-  - text: "Perfect"
-
+  - text: Super, ma bucur!
+  - text: Super tine-o tot asa!
+  - text: Super!
+  - text: Foarte bine!
+  - text: Perfect
   utter_goodbye:
-  - text: "Bye"
-  - text: "Salut"
-  - text: "Pa"
-  - text: "La revedere"
-  - text: "Pe curand"
-
+  - text: Bye
+  - text: Salut
+  - text: Pa
+  - text: La revedere
+  - text: Pe curand
+  
   utter_iamabot:
   - text: "Sunt un agent conversational."
   - text: "Sunt un bot, bazat pe Rasa"
@@ -64,9 +80,20 @@ responses:
   utter_thanks:
   - text: "Multumesc pentru informatii"
 
-actions:
-  - action_env_config
+  utter_learn_ai/ask_ml:
+  - text: Învățare automată (în engleză, „Machine Learning”) este un subdomeniu al informaticii și o ramură a inteligenței artificiale, al cărui obiectiv este de a dezvolta tehnici care dau calculatoarelor posibilitatea de a învăța. Mai precis, se urmărește să se creeze programe capabile de generalizare pe baza unor exemple.
+  utter_learn_ai/ask_dl:
+  - text: Învățarea profundă (în engleză, „Deep Learning”) este o ramura a inteligenței artificiale (IA) care imită funcționarea creierului uman în procesarea datelor și crearea de modele pentru luarea deciziilor. Deep Learning foloseste retele neurale pentru a invata in regim supervizat/nesupervizat din date nestructurate sau nemarcate.
+  utter_learn_ai/ask_ai:
+  - text: În informatică, inteligența artificială (IA) este inteligența expusă de mașini, spre deosebire de inteligența naturală, expusă de oameni și de unele animale. Kaplan și Haenlein definesc IA ca fiind „capacitatea unui sistem de a interpreta corect datele externe, de a învăța din astfel de date și de a folosi ceea ce a învățat pentru a-și atinge obiective și sarcini specifice printr-o adaptare flexibilă”.
+  - text: 'Informatica definește cercetarea IA ca studiu al „agenților inteligenți”: orice dispozitiv care își percepe mediul și efectuează acțiuni care maximizează șansa de a-și atinge cu succes obiectivele.'
+  - text: Termenul „inteligență artificială” este utilizat colocvial pentru a descrie mașinile care imită funcțiile „cognitive” pe care le asociază oamenii cu alte minți umane, cum ar fi „învățarea” și „rezolvarea problemelor”.
+  utter_ask_for_more:
+  - text: just buffer for training, message should be returned by custom action
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+actions:
+- action_respond_ai_questions
+- action_env_config
+
+forms: {}
+e2e_actions: []
