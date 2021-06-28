@@ -144,6 +144,8 @@ nlu:
 
 - intent: domain_general_knowledge
   examples: |
+    - cat de mult dureaza sa invat [AI]{"entity":"domain"}?
+    - cam cat dureaza in medie sa inveti [AI]{"entity":"domain"}?
     - ce trebuie sa stiu inainte ca sa pot sa invat [ML]{"entity":"domain"}?
     - trebuie invatate multe inainte ca sa pot face [ML]{"entity":"domain"}?
     - ma poti ajuta sa invat [C++]{"entity":"programming_language"} ?
@@ -248,3 +250,24 @@ nlu:
     - poti sa imi mai zici inca o gluma
     - mai stii si alte glume
     - inca o gluma
+
+- intent: compare_programming_tools_tensorflow_pytorch
+  examples: |
+    - cu care framework ar trebui sa incep? [pytorch]{"entity":"package"} sau [tensorflow]{"entity":"package"}?
+    - poti sa imi spui care este mai bun dintre [tensorflow]{"entity":"package"} si [pytorch]{"entity":"package"}?
+    - vreau sa incep [ML]{"entity":"domain"}, dar nu stiu daca sa invat [pytorch]{"entity":"package"} sau [tensorflow]{"entity":"package"}
+    - care este mai folosit pentru [DL]{"entity":"domain"}? [tensorflow]{"entity":"package"} sau [pytorch]{"entity":"package"}?
+
+- intent: compare_programming_tools_tensorflow_sklearn
+  examples: |
+    - cu care framework ar trebui sa incep? [sklearn]{"entity":"package"} sau [tensorflow]{"entity":"package"}?
+    - poti sa imi spui care este mai bun dintre [tensorflow]{"entity":"package"} si [sklearn]{"entity":"package"}?
+    - vreau sa incep [ML]{"entity":"domain"}, dar nu stiu daca sa invat [sklearn]{"entity":"package"} sau [tensorflow]{"entity":"package"}
+    - care este mai folosit pentru [ML]{"entity":"domain"}? [tensorflow]{"entity":"package"} sau [sklearn]{"entity":"package"}?
+
+- intent: compare_programming_tools_pytorch_sklearn
+  examples: |
+    - cu care framework ar trebui sa incep? [pytorch]{"entity":"package"} sau [sklearn]{"entity":"package"}?
+    - poti sa imi spui care este mai bun dintre [sklearn]{"entity":"package"} si [pytorch]{"entity":"package"}?
+    - vreau sa incep [ML]{"entity":"domain"}, dar nu stiu daca sa invat [pytorch]{"entity":"package"} sau [sklearn]{"entity":"package"}
+    - care este mai folosit pentru [ML]{"entity":"domain"}? [sklearn]{"entity":"package"} sau [pytorch]{"entity":"package"}?

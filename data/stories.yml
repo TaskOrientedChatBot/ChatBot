@@ -67,3 +67,33 @@ stories:
   steps:
   - intent: tell_joke
   - action: action_tell_joke
+
+- story: compare programming frameworks (tensorflow / pytorch)
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: compare_programming_tools_tensorflow_pytorch
+    - action: utter_compare_programming_tools/tensorflow_pytorch
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+
+- story: compare programming frameworks (tensorflow / sklearn)
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: compare_programming_tools_tensorflow_sklearn
+    - action: utter_compare_programming_tools/tensorflow_sklearn
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
+
+- story: compare programming frameworks (pytorch / sklearn)
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: compare_programming_tools_pytorch_sklearn
+    - action: utter_compare_programming_tools/pytorch_sklearn
+    - action: utter_did_that_help
+    - intent: affirm
+    - action: utter_happy
