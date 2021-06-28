@@ -43,6 +43,19 @@ stories:
   - intent: affirm
   - action: utter_happy
 
+- story: general_knowledge
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: domain_general_knowledge
+      entities:
+        - programming_language: "c++"
+        - domain: "ML"
+        - package: "pytorch"
+    - action: action_domain_general_knowledge
+    - intent: affirm
+    - action: utter_happy
+
 - story: ask about learning AI
   steps:
   - intent: learn_ai

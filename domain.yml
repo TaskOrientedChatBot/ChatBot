@@ -6,9 +6,14 @@ session_config:
   carry_over_slots_to_new_session: true
 
 intents:
-  - tell_name
-  - env_config
-  - tell_joke
+  - tell_name:
+      use_entities: true
+  - env_config:
+      use_entities: true
+  - tell_joke:
+      use_entities: true
+  - domain_general_knowledge:
+      use_entities: true
   - greet:
       use_entities: true
   - goodbye:
@@ -96,6 +101,7 @@ actions:
 - action_respond_ai_questions
 - action_env_config
 - action_tell_joke
+- action_domain_general_knowledge
 
 forms: {}
 e2e_actions: []
