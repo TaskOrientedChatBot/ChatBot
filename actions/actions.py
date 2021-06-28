@@ -78,6 +78,8 @@ class ActionRespondAIQuestions(Action):
         "learn_ai/ask_ml": "Machine learning definition",
     }
 
+    RESOURCES_EXHAUSTED = "Am epuizat informatiile despre aceasta tema. Continui cautarea pe google.com pentru: "
+
     def name(self) -> Text:
         return "action_respond_ai_questions"
 
@@ -95,8 +97,6 @@ class ActionRespondAIQuestions(Action):
         response = response_selector["default"]["response"]
         intent_response_key = response["intent_response_key"]
         responses = response["responses"]
-        print(tracker.latest_message)
-        print()
 
         if intent == "ask_for_more":
             if self.state is None:
@@ -110,8 +110,7 @@ class ActionRespondAIQuestions(Action):
                 self.counter += 1
             else:
                 query = self.QUERIES[self.state]
-                dispatcher.utter_message("Am epuizat informatiile despre aceasta tema. Continui cautarea pe google.com"
-                                         "pentru {}.".format(query))
+                dispatcher.utter_message(self.RESOURCES_EXHAUSTED + query)
                 links = list(search(query, lang="en", num=5, stop=5, pause=0.5))
                 response = "Am gasit urmatoarele rezultate care te-ar putea ajuta:\n"
                 response += reduce(lambda a, b: a + "\n" + b, links)

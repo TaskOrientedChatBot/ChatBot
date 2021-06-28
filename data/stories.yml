@@ -49,3 +49,8 @@ stories:
   - action: action_respond_ai_questions
   - intent: ask_for_more
   - action: action_respond_ai_questions
+
+- story: ask for jokes
+  steps:
+  - intent: tell_joke
+  - action: action_tell_joke

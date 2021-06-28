@@ -8,6 +8,7 @@ session_config:
 intents:
   - tell_name
   - env_config
+  - tell_joke
   - greet:
       use_entities: true
   - goodbye:
@@ -94,6 +95,7 @@ responses:
 actions:
 - action_respond_ai_questions
 - action_env_config
+- action_tell_joke
 
 forms: {}
 e2e_actions: []

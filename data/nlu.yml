@@ -236,3 +236,17 @@ nlu:
     - da-mi alta definitie
 
 
+- intent: tell_joke
+  examples: |
+    - poti sa imi spui o gluma?
+    - as vrea o gluma
+    - gluma despre AI
+    - stii glume despre AI?
+    - stii glume despre ml?
+    - ce glume stii?
+    - da-mi o gluma
+    - alta gluma
+    - poti sa imi mai zici inca o gluma
+    - mai stii si alte glume
+    - inca o gluma
+
