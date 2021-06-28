@@ -15,7 +15,6 @@ from googlesearch import search
 from random import randrange
 
 
-
 class ActionEnvConfig(Action):
     REQUEST_FREQUENCY = 0.5
     NUM_RETRIEVED_LINKS = 2

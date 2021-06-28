@@ -97,3 +97,8 @@ stories:
     - action: utter_did_that_help
     - intent: affirm
     - action: utter_happy
+
+- story: tutorials for subjects (nlp, cv)
+  steps:
+  - intent: learn_subject
+  - action: action_respond_learn_subject

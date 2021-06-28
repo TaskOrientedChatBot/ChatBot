@@ -38,6 +38,8 @@ intents:
       use_entities: true
   - compare_programming_tools_pytorch_sklearn:
       use_entities: true
+  - learn_subject:
+      use_entities: true
 
 entities:
   - package
@@ -46,6 +48,8 @@ entities:
   - ml
   - dl
   - ai
+  - cv
+  - nlp
 
 slots: {}
 responses:
@@ -110,10 +114,14 @@ responses:
   utter_compare_programming_tools/pytorch_sklearn:
     - text: "Pytorch este o biblioteca specializata pentru implementarea modelelor bazate pe retele neurale, deci este o biblioteca de deep learning (DL). Scikit-learn este in principal o biblioteca high-level de functii axate pe procesarea de feature-uri ale datelor."
 
+  utter_learn_subject:
+    - text: "default message (maybe update even though response is handled by custom action)"
+
 actions:
 - action_respond_ai_questions
 - action_env_config
 - action_tell_joke
+- action_respond_learn_subject
 - action_domain_general_knowledge
 
 forms: {}

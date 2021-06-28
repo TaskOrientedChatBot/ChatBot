@@ -271,3 +271,21 @@ nlu:
     - poti sa imi spui care este mai bun dintre [sklearn]{"entity":"package"} si [pytorch]{"entity":"package"}?
     - vreau sa incep [ML]{"entity":"domain"}, dar nu stiu daca sa invat [pytorch]{"entity":"package"} sau [sklearn]{"entity":"package"}
     - care este mai folosit pentru [ML]{"entity":"domain"}? [sklearn]{"entity":"package"} sau [pytorch]{"entity":"package"}?
+
+- intent: learn_subject
+  examples: |
+    - As vrea sa invat despre [Computer Vision](cv)
+    - As vrea sa invat [computer vision](cv)
+    - imi poti da tutoriale despre [CV](cv)
+    - ai tutoriale despre [cv](cv)
+    - ai niste link-uri utile ca sa pot invata [cv][cv]
+    - ce tutoriale imi poti da pentru [computer vision](cv)
+    - tutoriale pentru [cv](cv)
+    - Stii tutoriale bune despre [NLP](nlp)
+    - As vrea sa invat [Natural Language Processing](nlp)
+    - ce tutoriale despre [nlp](nlp) ai?
+    - ai tutoriale despre [prelucrarea limbajului natural](nlp)
+    - ce tutoriale imi poti da pentru [Nlp](nlp)
+    - tutoriale pentru [natual language processing](nlp)
+    - link-uri [nlp](nlp)
+
