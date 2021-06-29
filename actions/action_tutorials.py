@@ -6,7 +6,7 @@ from functools import reduce
 
 
 class ActionLearnSubject(Action):
-    INTRO_MESSAGE = "Ca sa inveti {}, poti incepe cu link-urile acestea: \n"
+    INTRO_MESSAGE = "Ca să înveți {}, poți începe cu link-urile acestea: \n"
     TUTORIAL = {
         "cv": "- http://cs231n.stanford.edu/\n"
               "- https://www.tensorflow.org/tutorials/images/cnn\n"

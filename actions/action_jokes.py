@@ -11,11 +11,11 @@ import os
 class ActionTellJoke(Action):
     JOKES_FILE = os.path.join(get_data_dir(), "jokes.json")
     JOKES_INTRO = [
-        "Am ras mult la urmatoarea gluma:",
-        "O gluma foarte buna ar fi:",
-        "Mi-a placut mult urmatoarea gluma:",
+        "Am râs mult la următoarea glumă:",
+        "O glumă foarte bună ar fi:",
+        "Mi-a plăcut mult următoarea glumă:",
         "Una din preferatele mele este:",
-        "Sunt sigur ca o sa gasesti amuzanta urmatoarea gluma:"
+        "Sunt sigur ca o sa găsești amuzantă următoarea glumă:"
     ]
 
     def name(self) -> Text:
