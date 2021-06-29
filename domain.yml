@@ -60,22 +60,22 @@ responses:
   - text: Cum merge?
   - text: Ce mai zici?
   - text: Salut!
-  - text: Hello, cum esti?
-  - text: Salut! Sunt asistentul tau si te voi ajuta sa inveti sa dezvolti primul program in inteligenta artificiala.
+  - text: Hello, cum ești?
+  - text: Salut! Sunt asistentul tău și te voi ajuta să înveți să dezvolți primul program în inteligență artificială.
   utter_cheer_up:
   - image: https://postimg.cc/Y4dMNHkF
-    text: 'Uite ceva sa te inveseleasca:'
+    text: 'Uite ceva să te înveselească:'
   - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Am pregatit ceva care te-ar putea inveseli:'
+    text: 'Am pregătit ceva care te-ar putea înveseli:'
   utter_did_that_help:
   - text: Te-a ajutat?
   - text: Este ok?
   - text: S-a rezolvat?
-  - text: Ai reusit?
+  - text: Ai reușit?
   - text: A fost de folos?
   utter_happy:
-  - text: Super, ma bucur!
-  - text: Super tine-o tot asa!
+  - text: Super, mă bucur!
+  - text: Super ține-o tot așa!
   - text: Super!
   - text: Foarte bine!
   - text: Perfect
@@ -84,22 +84,22 @@ responses:
   - text: Salut
   - text: Pa
   - text: La revedere
-  - text: Pe curand
-  
+  - text: Pe curând
+
   utter_iamabot:
-  - text: "Sunt un agent conversational."
+  - text: "Sunt un agent conversațional."
   - text: "Sunt un bot, bazat pe Rasa"
   - text: "Sunt doar un bot"
   - text: "Nu sunt uman"
-  - text: "Sunt un chatbot care foloseste IA"
+  - text: "Sunt un chatbot care folosește IA"
 
   utter_thanks:
-  - text: "Multumesc pentru informatii"
+  - text: "Mulțumesc pentru informații"
 
   utter_learn_ai/ask_ml:
   - text: Învățare automată (în engleză, „Machine Learning”) este un subdomeniu al informaticii și o ramură a inteligenței artificiale, al cărui obiectiv este de a dezvolta tehnici care dau calculatoarelor posibilitatea de a învăța. Mai precis, se urmărește să se creeze programe capabile de generalizare pe baza unor exemple.
   utter_learn_ai/ask_dl:
-  - text: Învățarea profundă (în engleză, „Deep Learning”) este o ramura a inteligenței artificiale (IA) care imită funcționarea creierului uman în procesarea datelor și crearea de modele pentru luarea deciziilor. Deep Learning foloseste retele neurale pentru a invata in regim supervizat/nesupervizat din date nestructurate sau nemarcate.
+  - text: Învățarea profundă (în engleză, „Deep Learning”) este o ramură a inteligenței artificiale (IA) care imită funcționarea creierului uman în procesarea datelor și crearea de modele pentru luarea deciziilor. Deep Learning folosește rețele neurale pentru a învăța în regim supervizat/nesupervizat din date nestructurate sau nemarcate.
   utter_learn_ai/ask_ai:
   - text: În informatică, inteligența artificială (IA) este inteligența expusă de mașini, spre deosebire de inteligența naturală, expusă de oameni și de unele animale. Kaplan și Haenlein definesc IA ca fiind „capacitatea unui sistem de a interpreta corect datele externe, de a învăța din astfel de date și de a folosi ceea ce a învățat pentru a-și atinge obiective și sarcini specifice printr-o adaptare flexibilă”.
   - text: 'Informatica definește cercetarea IA ca studiu al „agenților inteligenți”: orice dispozitiv care își percepe mediul și efectuează acțiuni care maximizează șansa de a-și atinge cu succes obiectivele.'
@@ -108,11 +108,11 @@ responses:
   - text: just buffer for training, message should be returned by custom action
 
   utter_compare_programming_tools/tensorflow_pytorch:
-    - text: "Tensorflow este un framework dezvoltat de Google, in timp ce PyTorch este dezvoltat de Facebook. Ca performanta, ambele biblioteci sunt cam la acelasi nivel. PyTorch adera mai bine la conceptul de programare OOP, in schimb asta poate rezulta in mai multe linii de cod. Pentru incepatori, in Tensorflow, codul poate parea mai greu de scris, insa exista si o simplificare (Keras) care simplifica scrierea codului."
+    - text: "Tensorflow este un framework dezvoltat de Google, în timp ce PyTorch este dezvoltat de Facebook. Ca performanță, ambele biblioteci sunt cam la același nivel. PyTorch aderă mai bine la conceptul de programare OOP, în schimb asta poate rezulta în mai multe linii de cod. Pentru începători, în Tensorflow, codul poate părea mai greu de scris, însă exista și o simplificare (Keras) care simplifică scrierea codului."
   utter_compare_programming_tools/tensorflow_sklearn:
-    - text: "Scikit learn (sklearn) este o biblioteca de Machine Learning foarte utilizata datorita capabilitatilor de manipulare a feature-urilor datelor. In schimb, Tensorflow este o biblioteca mai low-level, folosita pentru aplicatii de Deep Learning (DL)."
+    - text: "Scikit learn (sklearn) este o bibliotecă de Machine Learning foarte utilizată datorită capabilitatilor de manipulare a feature-urilor datelor. În schimb, Tensorflow este o bibliotecă mai low-level, folosită pentru aplicații de Deep Learning (DL)."
   utter_compare_programming_tools/pytorch_sklearn:
-    - text: "Pytorch este o biblioteca specializata pentru implementarea modelelor bazate pe retele neurale, deci este o biblioteca de deep learning (DL). Scikit-learn este in principal o biblioteca high-level de functii axate pe procesarea de feature-uri ale datelor."
+    - text: "Pytorch este o bibliotecă specializată pentru implementarea modelelor bazate pe rețele neurale, deci este o bibliotecă de deep learning (DL). Scikit-learn este în principal o bibliotecă high-level de funcții axate pe procesarea de feature-uri ale datelor."
 
   utter_learn_subject:
     - text: "default message (maybe update even though response is handled by custom action)"

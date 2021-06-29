@@ -18,17 +18,17 @@ from random import randrange
 class ActionEnvConfig(Action):
     REQUEST_FREQUENCY = 0.5
     NUM_RETRIEVED_LINKS = 2
-    POSSIBLE_PACKAGE_RESPONSES = ["La link-urile de aici am gasit niste informatii despre {}: \n{}",
-                                  "Cateva link-uri despre {}: \n{}",
-                                  "Am gasit cate ceva despre {}: \n{}",
-                                  "Uite cateva link-uri interesante despre configurat {}: \n{}",
-                                  "Daca esti interesat de {}, poti incepe cu link-urile de aici: \n{}"]
-    POSSIBLE_PROGRAMMING_LANGUAGE_RESPONSES = ["Uite cateva tutoriale bune pentru {}: \n{}",
-                                               "Ca sa inveti {}, poti incepe cu link-urile acestea: \n{}",
-                                               "Link-urile de aici ar trebui sa contina suficiente informatii despre"
+    POSSIBLE_PACKAGE_RESPONSES = ["La link-urile de aici am găsit niște informații despre {}: \n{}",
+                                  "Câteva link-uri despre {}: \n{}",
+                                  "Am găsit câte ceva despre {}: \n{}",
+                                  "Uite câteva link-uri interesante despre configurat {}: \n{}",
+                                  "Dacă ești interesat de {}, poți începe cu link-urile de aici: \n{}"]
+    POSSIBLE_PROGRAMMING_LANGUAGE_RESPONSES = ["Uite câteva tutoriale bune pentru {}: \n{}",
+                                               "Ca sa înveți {}, poți începe cu link-urile acestea: \n{}",
+                                               "Link-urile de aici ar trebui să conțină suficiente informații despre"
                                                "\n{}",
-                                               "Poti incepe sa inveti despre {} cu link-urile de mai jos: \n{}",
-                                               "Link-urile de aici ar trebui sa fie de folos pentru invatat {}: \n{}"]
+                                               "Poți începe să înveți despre {} cu link-urile de mai jos: \n{}",
+                                               "Link-urile de aici ar trebui să fie de folos pentru învățat {}: \n{}"]
 
     def name(self) -> Text:
         return "action_env_config"
@@ -92,18 +92,18 @@ class ActionEnvConfig(Action):
 class ActionDomainGeneralKnowledge(Action):
     REQUEST_FREQUENCY = 0.5
     NUM_RETRIEVED_LINKS = 2
-    POSSIBLE_PACKAGE_RESPONSES = ["La link-urile de aici am gasit niste informatii despre {}: \n{}",
-                                  "Cateva informatii generale despre {}: \n{}",
-                                  "Cateva lucruri despre {}: \n{}",
-                                  "Uite cateva link-uri despre {}: \n{}",
-                                  "Informatii de baza despre {} gasesti aici: \n{}"]
-    POSSIBLE_PROGRAMMING_LANGUAGE_RESPONSES = ["Uite cateva tutoriale bune pentru {}: \n{}",
-                                               "Informatii generale despre {}: \n{}",
-                                               "Poti sa citesti aici despre {}, pentru inceput: \n{}",
-                                               "Poti incepe sa inveti despre {} cu link-urile de mai jos: \n{}"]
-    POSSIBLE_DOMAIN_RESPONSES = ["Aici am gasit niste informatii de baza despre {}: \n{}",
-                                 "Cateva informatii generale despre domeniul de {}: \n{}",
-                                 "Daca esti interesat de domeniul de {}, poti incepe sa citesti de aici: \n{}"]
+    POSSIBLE_PACKAGE_RESPONSES = ["La link-urile de aici am găsit niste informații despre {}: \n{}",
+                                  "Câteva informații generale despre {}: \n{}",
+                                  "Câteva lucruri despre {}: \n{}",
+                                  "Uite câteva link-uri despre {}: \n{}",
+                                  "Informații de baza despre {} găsești aici: \n{}"]
+    POSSIBLE_PROGRAMMING_LANGUAGE_RESPONSES = ["Uite câteva tutoriale bune pentru {}: \n{}",
+                                               "Informații generale despre {}: \n{}",
+                                               "Poți să citești aici despre {}, pentru început: \n{}",
+                                               "Poți începe să înveți despre {} cu link-urile de mai jos: \n{}"]
+    POSSIBLE_DOMAIN_RESPONSES = ["Aici am găsit niste informații de baza despre {}: \n{}",
+                                 "Câteva informații generale despre domeniul de {}: \n{}",
+                                 "Daca ești interesat de domeniul de {}, poți începe să citești de aici: \n{}"]
 
     def name(self) -> Text:
         return "action_domain_general_knowledge"
@@ -165,7 +165,7 @@ class ActionRespondAIQuestions(Action):
         "learn_ai/ask_ml": "Machine learning definition",
     }
 
-    RESOURCES_EXHAUSTED = "Am epuizat informatiile despre aceasta tema. Continui cautarea pe google.com pentru: "
+    RESOURCES_EXHAUSTED = "Am epuizat informațiile despre aceasta temă. Continui căutarea pe google.com pentru: "
 
     def name(self) -> Text:
         return "action_respond_ai_questions"
@@ -187,7 +187,7 @@ class ActionRespondAIQuestions(Action):
 
         if intent == "ask_for_more":
             if self.state is None:
-                dispatcher.utter_message(text="Despre ce subiect ai dori sa afli mai multe? :)")
+                dispatcher.utter_message(text="Despre ce subiect ai dori să afli mai multe? :)")
                 return []
 
             # we should check if in ask_for_more intent we have a specific entity (ml, dl, ai)
@@ -199,7 +199,7 @@ class ActionRespondAIQuestions(Action):
                 query = self.QUERIES[self.state]
                 dispatcher.utter_message(self.RESOURCES_EXHAUSTED + query)
                 links = list(search(query, lang="en", num=5, stop=5, pause=0.5))
-                response = "Am gasit urmatoarele rezultate care te-ar putea ajuta:\n"
+                response = "Am găsit următoarele rezultate care te-ar putea ajuta:\n"
                 response += reduce(lambda a, b: a + "\n" + b, links)
 
                 dispatcher.utter_message(text=response)
