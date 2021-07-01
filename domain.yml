@@ -101,8 +101,8 @@ responses:
   utter_learn_ai/ask_dl:
   - text: Învățarea profundă (în engleză, „Deep Learning”) este o ramură a inteligenței artificiale (IA) care imită funcționarea creierului uman în procesarea datelor și crearea de modele pentru luarea deciziilor. Deep Learning folosește rețele neurale pentru a învăța în regim supervizat/nesupervizat din date nestructurate sau nemarcate.
   utter_learn_ai/ask_ai:
-  - text: În informatică, inteligența artificială (IA) este inteligența expusă de mașini, spre deosebire de inteligența naturală, expusă de oameni și de unele animale. Kaplan și Haenlein definesc IA ca fiind „capacitatea unui sistem de a interpreta corect datele externe, de a învăța din astfel de date și de a folosi ceea ce a învățat pentru a-și atinge obiective și sarcini specifice printr-o adaptare flexibilă”.
-  - text: 'Informatica definește cercetarea IA ca studiu al „agenților inteligenți”: orice dispozitiv care își percepe mediul și efectuează acțiuni care maximizează șansa de a-și atinge cu succes obiectivele.'
+  - text: În informatică, inteligența artificială (I.A.) este inteligența expusă de mașini, spre deosebire de inteligența naturală, expusă de oameni și de unele animale. Kaplan și Haenlein definesc I.A. ca fiind „capacitatea unui sistem de a interpreta corect datele externe, de a învăța din astfel de date și de a folosi ceea ce a învățat pentru a-și atinge obiective și sarcini specifice printr-o adaptare flexibilă”.
+  - text: 'Informatica definește cercetarea I.A. ca studiu al „agenților inteligenți”: orice dispozitiv care își percepe mediul și efectuează acțiuni care maximizează șansa de a-și atinge cu succes obiectivele.'
   - text: Termenul „inteligență artificială” este utilizat colocvial pentru a descrie mașinile care imită funcțiile „cognitive” pe care le asociază oamenii cu alte minți umane, cum ar fi „învățarea” și „rezolvarea problemelor”.
   utter_ask_for_more:
   - text: just buffer for training, message should be returned by custom action
