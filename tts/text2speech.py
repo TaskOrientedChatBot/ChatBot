@@ -1,12 +1,10 @@
-import os
+from tts.tts_models import TTS, GooglePkgTTS, GoogleCloudTTS
+import argparse
+import requests
 import re
 
-import requests
-import subprocess
-from gtts import gTTS
 
-
-def chatbot_tts():
+def chat_bot_tts(audio_synthesis: TTS):
     sender = "Me"
     bot_message = ""
     while bot_message != "Bye":
@@ -19,18 +17,35 @@ def chatbot_tts():
             links = re.findall(r'(https?://[^\s]+)', bot_message)
             for idx, link in enumerate(links):
                 bot_message = bot_message.replace(link, '')
-            audio = gTTS(text=bot_message, lang="ro", slow=False)
-            save_and_play_mp3(audio)
+            audio = audio_synthesis.synthesize_text(text=bot_message)
+            audio_synthesis.play(audio)
 
 
-def save_and_play_mp3(audio):
-    audio.save("file.mp3")
-    subprocess.call(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", "file.mp3", "-filter:a", "atempo=1.6", "-vn",
-                     "file_output.mp3"])
-    subprocess.call(["cmdmp3", "file_output.mp3"], stdout=subprocess.DEVNULL)
-    os.remove("file.mp3")
-    os.remove("file_output.mp3")
+def main(config):
+    if config["model"] == "gcloud":
+        from google.cloud import texttospeech
+        # start it with defaults
+        _voice_config = {
+            "name": "ro-RO-Wavenet-A",
+            "ssml_gender": texttospeech.SsmlVoiceGender.FEMALE,
+        }
+
+        _audio_config = {}
+
+        gtts = GoogleCloudTTS(_voice_config, _audio_config)
+    elif config["model"] == "gtts":
+        gtts = GooglePkgTTS()
+    else:
+        raise ValueError("There's no synthesiser with name: {}".format(config["model"]))
+
+    chat_bot_tts(gtts)
 
 
 if __name__ == "__main__":
-    chatbot_tts()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", type=str, default="gcloud", help="Select model to be used for playing sound.")
+    args = parser.parse_args()
+    _config = {
+        "model": args.model
+    }
+    main(_config)
