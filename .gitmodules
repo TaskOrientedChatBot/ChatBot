@@ -1,0 +1,3 @@
+[submodule "extern_tts"]
+	path = extern_tts
+	url = https://github.com/marzus555/TTS.git
