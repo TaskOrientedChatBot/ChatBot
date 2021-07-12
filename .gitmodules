@@ -1,3 +1,6 @@
 [submodule "extern_tts"]
 	path = extern_tts
 	url = https://github.com/marzus555/TTS.git
+[submodule "extern_tts_fork"]
+	path = extern_tts_fork
+	url = https://github.com/Gabriel-Bercaru/TTS.git
