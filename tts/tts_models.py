@@ -97,6 +97,25 @@ class GoogleCloudTTS(TTS):
         os.remove(self._tmp_file)
 
 
+class ROTacotron2WaveRNNTTS(TTS):
+    def __init__(self):
+        super().__init__()
+
+    def synthesize_text(self, text):
+        pass
+
+    def play(self, text):
+        subprocess.call(["python",
+                         "extern_tts_fork\inference.py",
+                         "--text",
+                         text], shell=True)
+        subprocess.call(["cmdmp3",
+                         "reply.wav"],
+                        stdout=subprocess.DEVNULL)
+
+        os.remove("reply.wav")
+
+
 if __name__ == "__main__":
     _text = "Ana are mere și pere."
 
