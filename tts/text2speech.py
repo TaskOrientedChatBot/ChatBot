@@ -1,10 +1,10 @@
-from tts.tts_models import TTS, GooglePkgTTS, GoogleCloudTTS
+from tts.tts_models import TTS, GooglePkgTTS, GoogleCloudTTS, ROTacotron2WaveRNNTTS
 import argparse
 import requests
 import re
 
 
-def chat_bot_tts(audio_synthesis: TTS):
+def chat_bot_tts(audio_synthesis: TTS, config: dict):
     sender = "Me"
     bot_message = ""
     while bot_message != "Bye":
@@ -17,8 +17,12 @@ def chat_bot_tts(audio_synthesis: TTS):
             links = re.findall(r'(https?://[^\s]+)', bot_message)
             for idx, link in enumerate(links):
                 bot_message = bot_message.replace(link, '')
-            audio = audio_synthesis.synthesize_text(text=bot_message)
-            audio_synthesis.play(audio)
+
+            if config["model"] != "ROTacotron2WaveRNN":
+                audio = audio_synthesis.synthesize_text(text=bot_message)
+                audio_synthesis.play(audio)
+            else:
+                audio_synthesis.play(bot_message)
 
 
 def main(config):
@@ -35,10 +39,12 @@ def main(config):
         gtts = GoogleCloudTTS(_voice_config, _audio_config)
     elif config["model"] == "gtts":
         gtts = GooglePkgTTS()
+    elif config["model"] == "ROTacotron2WaveRNN":
+        gtts = ROTacotron2WaveRNNTTS()
     else:
         raise ValueError("There's no synthesiser with name: {}".format(config["model"]))
 
-    chat_bot_tts(gtts)
+    chat_bot_tts(gtts, config)
 
 
 if __name__ == "__main__":
