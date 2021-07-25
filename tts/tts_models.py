@@ -114,6 +114,27 @@ class ROTacotron2WaveRNNTTS(TTS):
 
         os.remove("reply.wav")
 
+class ROTransformerTTS(TTS):
+    def __init__(self):
+        super().__init__()
+
+    def synthesize_text(self, text):
+        pass
+
+    def play(self, text):
+        subprocess.call(["python",
+                        "tts\transformer_tts_predict.py",
+                        "-t",
+                        text,
+                        "-p",
+                        "TaskOrientedChatBotBlobs\TransformerTTS\Adr",
+                        "-o",
+                        "."], shell=True)
+
+        subprocess.call(["cmdmp3",
+                        ".\outputs\reply.wav"],
+                        stdout=subprocess.DEVNULL)
+
 if __name__ == "__main__":
     _text = "Ana are mere și pere."
 
