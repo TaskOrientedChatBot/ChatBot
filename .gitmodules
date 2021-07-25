@@ -1,3 +1,6 @@
 [submodule "extern_tts_fork"]
 	path = extern_tts_fork
 	url = https://github.com/Gabriel-Bercaru/TTS.git
+[submodule "TaskOrientedChatBotBlobs"]
+	path = TaskOrientedChatBotBlobs
+	url = https://github.com/Gabriel-Bercaru/TaskOrientedChatBotBlobs.git
