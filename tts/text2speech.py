@@ -1,9 +1,9 @@
-from tts.tts_models import TTS, GooglePkgTTS, GoogleCloudTTS, ROTacotron2WaveRNNTTS
+from tts.tts_models import TTS, GooglePkgTTS, GoogleCloudTTS, ROTacotron2WaveRNNTTS, ROTransformerTTS
 import argparse
 import requests
 import re
 
-PLAY_ONLY_MODELS = {'ROTacotron2WaveRNN', 'ROTransformerTTS'}
+PLAY_ONLY_MODELS = {'ROTacotron2WaveRNN'}
 
 def chat_bot_tts(audio_synthesis: TTS, config: dict):
     sender = "Me"
@@ -23,6 +23,7 @@ def chat_bot_tts(audio_synthesis: TTS, config: dict):
                 audio = audio_synthesis.synthesize_text(text=bot_message)
                 audio_synthesis.play(audio)
             else:
+                audio_synthesis.synthesize_text(text=bot_message)
                 audio_synthesis.play(bot_message)
 
 
@@ -43,7 +44,10 @@ def main(config):
     elif config["model"] == "ROTacotron2WaveRNN":
         gtts = ROTacotron2WaveRNNTTS()
     elif config["model"] == "ROTransformerTTS":
-        gtts = ROTransformerTTS()
+        gtts = ROTransformerTTS("TaskOrientedChatBotBlobs\TransformerTTS\Adr",
+                                ".",
+                                True,
+                                vocoder_type='hifigan')
     else:
         raise ValueError("There's no synthesiser with name: {}".format(config["model"]))
 
