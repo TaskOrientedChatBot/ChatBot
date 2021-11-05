@@ -181,11 +181,19 @@ if __name__ == "__main__":
         "ssml_gender": texttospeech.SsmlVoiceGender.FEMALE,
     }
 
+    # _audio_config = {}
+    # gtts = GoogleCloudTTS(_voice_config, _audio_config)
+    # _audio = gtts.synthesize_text(_text)
+    # gtts.play(_audio)
+    #
+    # gtts2 = GooglePkgTTS()
+    # _audio = gtts2.synthesize_text(_text)
+    # gtts2.play(_audio)
+
     _audio_config = {}
-    gtts = GoogleCloudTTS(_voice_config, _audio_config)
+    gtts = ROTransformerTTS("TaskOrientedChatBotBlobs\\TransformerTTS\\step_195000",
+                            ".",
+                            True,
+                            vocoder_type='hifigan')
     _audio = gtts.synthesize_text(_text)
     gtts.play(_audio)
-
-    gtts2 = GooglePkgTTS()
-    _audio = gtts2.synthesize_text(_text)
-    gtts2.play(_audio)

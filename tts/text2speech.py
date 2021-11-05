@@ -44,7 +44,7 @@ def main(config):
     elif config["model"] == "ROTacotron2WaveRNN":
         gtts = ROTacotron2WaveRNNTTS()
     elif config["model"] == "ROTransformerTTS":
-        gtts = ROTransformerTTS("TaskOrientedChatBotBlobs\TransformerTTS\Adr",
+        gtts = ROTransformerTTS("TaskOrientedChatBotBlobs\\TransformerTTS\\Adr",
                                 ".",
                                 True,
                                 vocoder_type='hifigan')
