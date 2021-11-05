@@ -19,3 +19,4 @@ class TextToTokens:
         phonemizer = Phonemizer(language=language, njobs=njobs, with_stress=with_stress)
         tokenizer = Tokenizer(add_start_end=add_start_end, model_breathing=model_breathing, alphabet=alphabet)
         return cls(phonemizer=phonemizer, tokenizer=tokenizer)
+

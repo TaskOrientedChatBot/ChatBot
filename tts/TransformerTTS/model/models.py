@@ -697,6 +697,7 @@ class ForwardTransformer(tf.keras.models.Model):
 
     @classmethod
     def load_model(cls, path):
+
         yaml = YAML()
         path = Path(path)
         with open(path / "config.yaml", "r", encoding="utf-8") as f:
