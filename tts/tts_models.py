@@ -2,15 +2,20 @@ from google.cloud import texttospeech
 from utils.paths import get_project_root
 from typing import Dict
 from gtts import gTTS
+import numpy as np
+from pathlib import Path
 import subprocess
 import os
+from tts.TransformerTTS.vocoding.predictors import HiFiGANPredictor, MelGANPredictor
+
+from tts.TransformerTTS.data.audio import Audio
+from tts.TransformerTTS.model.models import ForwardTransformer
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.path.join(get_project_root(),
                                                             "artificialintelligence-253111-7c9f9a54cb61.json")
 
 
 class TTS:
-
     def __init__(self):
         self._tmp_file = "tmp_file.mp3"
 
@@ -22,7 +27,6 @@ class TTS:
 
 
 class GooglePkgTTS(TTS):
-
     def __init__(self, lang="ro", audio_tempo: float = 1.0):
         super().__init__()
         self.audio_tempo = audio_tempo
@@ -114,6 +118,59 @@ class ROTacotron2WaveRNNTTS(TTS):
                         stdout=subprocess.DEVNULL)
 
         os.remove("reply.wav")
+
+
+class ROTransformerTTS(TTS):
+    def __init__(self, model_path, out_dir, store_mels, vocoder_type=None):
+        super().__init__()
+
+        self.model_path = model_path
+        self.out_dir = out_dir
+        self.store_mels = store_mels
+
+        self.fname = 'custom_text'
+        self.outdir = Path(self.out_dir)
+        self.vocoder_type = vocoder_type
+
+        if self.vocoder_type == 'melgan':
+            self.vocoder = MelGANPredictor.from_folder('tts/TransformerTTS/vocoding/melgan/en')
+        elif self.vocoder_type == 'hifigan':
+            self.vocoder = HiFiGANPredictor.from_folder('tts/TransformerTTS/vocoding/hifigan/en')
+
+        self.model = ForwardTransformer.load_model(self.model_path)
+
+    def synthesize_text(self, text):
+        self.text = [text]
+
+    def play(self, text):
+        file_name = "reply"
+        outdir = self.outdir / 'outputs' / f'{self.fname}'
+        outdir.mkdir(exist_ok=True, parents=True)
+        output_path = (outdir / file_name).with_suffix('.wav')
+        audio = Audio.from_config(self.model.config)
+        print(f'Output wav under {output_path.parent}')
+        wavs = []
+        for i, text_line in enumerate(self.text):
+            phons = self.model.text_pipeline.phonemizer(text_line)
+            tokens = self.model.text_pipeline.tokenizer(phons)
+
+            out = self.model.predict(tokens, encode=False, speed_regulator=1.0, phoneme_max_duration=None)
+            mel = out['mel'].numpy().T
+
+            if self.vocoder_type is None:
+                wav = audio.reconstruct_waveform(mel)
+            else:
+                wav = self.vocoder([mel])[0]
+            wavs.append(wav)
+
+            if self.store_mels:
+                np.save((outdir / (file_name + f'_{i}')).with_suffix('.mel'), out['mel'].numpy())
+
+        audio.save_wav(np.concatenate(wavs), output_path)
+
+        subprocess.call(["cmdmp3",
+                         "./outputs/custom_text/reply.wav"],
+                        stdout=subprocess.DEVNULL)
 
 
 if __name__ == "__main__":
