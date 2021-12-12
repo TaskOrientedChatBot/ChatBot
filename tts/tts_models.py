@@ -100,6 +100,7 @@ class GoogleCloudTTS(TTS):
         subprocess.call(["cmdmp3", self._tmp_file], stdout=subprocess.DEVNULL)
         os.remove(self._tmp_file)
 
+
 class ROTacotron2WaveRNNTTS(TTS):
     def __init__(self):
         super().__init__()
@@ -109,14 +110,15 @@ class ROTacotron2WaveRNNTTS(TTS):
 
     def play(self, text):
         subprocess.call(["python",
-                        "extern_tts_fork\inference.py",
-                        "--text",
-                        text], shell=True)
+                         "extern_tts_fork\inference.py",
+                         "--text",
+                         text], shell=True)
         subprocess.call(["cmdmp3",
-                        "reply.wav"],
+                         "reply.wav"],
                         stdout=subprocess.DEVNULL)
 
         os.remove("reply.wav")
+
 
 class ROTransformerTTS(TTS):
     def __init__(self, model_path, out_dir, store_mels, vocoder_type=None):
@@ -167,8 +169,9 @@ class ROTransformerTTS(TTS):
         audio.save_wav(np.concatenate(wavs), output_path)
 
         subprocess.call(["cmdmp3",
-                        "./outputs/custom_text/reply.wav"],
+                         "./outputs/custom_text/reply.wav"],
                         stdout=subprocess.DEVNULL)
+
 
 if __name__ == "__main__":
     _text = "Ana are mere și pere."
@@ -178,11 +181,19 @@ if __name__ == "__main__":
         "ssml_gender": texttospeech.SsmlVoiceGender.FEMALE,
     }
 
+    # _audio_config = {}
+    # gtts = GoogleCloudTTS(_voice_config, _audio_config)
+    # _audio = gtts.synthesize_text(_text)
+    # gtts.play(_audio)
+    #
+    # gtts2 = GooglePkgTTS()
+    # _audio = gtts2.synthesize_text(_text)
+    # gtts2.play(_audio)
+
     _audio_config = {}
-    gtts = GoogleCloudTTS(_voice_config, _audio_config)
+    gtts = ROTransformerTTS("TaskOrientedChatBotBlobs\\TransformerTTS\\step_195000",
+                            ".",
+                            True,
+                            vocoder_type='hifigan')
     _audio = gtts.synthesize_text(_text)
     gtts.play(_audio)
-
-    gtts2 = GooglePkgTTS()
-    _audio = gtts2.synthesize_text(_text)
-    gtts2.play(_audio)
