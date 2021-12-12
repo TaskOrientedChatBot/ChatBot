@@ -24,6 +24,8 @@ button {
     max-width: 500px;
     height: 132px;
     background: #fff;
+    zoom: 0.5;
+    -moz-transform: scale(0.5);
 }
 #audio-player-container::before {
     position: absolute;
