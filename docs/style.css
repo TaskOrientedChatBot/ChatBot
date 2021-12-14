@@ -115,3 +115,53 @@ input[type="range"]::before {
     background-color: #007db5;
     cursor: pointer;
 }
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+#audio-player-container2 {
+  --seek-before-width: 0%;
+    --volume-before-width: 100%;
+    --buffered-width: 0%;
+    position: relative;
+    margin: 100px 2.5% auto 2.5%;
+    width: 95%;
+    max-width: 500px;
+    height: 132px;
+    background: #fff;
+    zoom: 0.5;
+    -moz-transform: scale(0.5);
+}
+
+#audio-player-container2::before {
+    position: absolute;
+    content: '';
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(to left, #007db5, #ff8a00);
+    z-index: -1;
+}
+
+#play-icon2 {
+    margin: 20px 2.5% 10px 2.5%;
+}
+
+#volume-slider2 {
+    margin: 10px 2.5%;
+    width: 58%;
+}
+#volume-slider2::-webkit-slider-runnable-track {
+    background: rgba(0, 125, 181, 0.6);
+}
+#volume-slider2::-moz-range-track {
+    background: rgba(0, 125, 181, 0.6);
+}
+#volume-slider2::-ms-fill-upper {
+    background: rgba(0, 125, 181, 0.6);
+}
+#volume-slider2::before {
+    width: var(--volume-before-width);
+}
+#mute-icon2 {
+    margin: 0 2.5%;
+}
